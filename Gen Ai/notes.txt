@@ -1,0 +1,54 @@
+Word Embedding
+- Word2Vec
+--GlovE
+
+
+What is a word Embedding?
+-Dense vector representation of a word that captures meaning
+
+TF-IDF treats words a independent tokens
+RF-IDF does not understand:
+car = automobile
+mobile = electronics
+happy = joyful
+
+So we need a way to represent words based on meaning, not just count
+
+Technique for dense numerical vectors:
+Word2Vec
+- one of the technique in NLP used to represent words as dense numerical vector
+-Developed by Google in 2013
+-it allows machine to understand the semantic relationship between words by positioning similar words closer together in a high-dimentional vector space
+
+
+
+Core idea behind Word2Vec
+-Words that appear in similar context have similar meanings
+-This is called:Distributional Hypothesis
+
+
+Core Architecture:
+-CBOW -> Continuous Bag of Words
+     -Model that predicts a target word based on its surrounding context words.
+
+-Skip-gram
+        -using a single word to predict the surrounding context words.It is fast for infrquent words
+
+CBOW: Predict target word from surrounding context
+Input: I am learning _________ intelligence 
+prediction: artificial
+
+
+Skip-Gram: Predict surrounding words from a target word
+Input: intelligence
+Prediction: artificial,human,machine
+
+
+key differences b/w Sparse Matrix and Dense Matrix
+1.  Sparse - Mostly zero values
+    Dense - Most values are meaningful, non-zero values
+
+2. Memory efficiency 
+Sparse - Highly memory-efficient for large datasets
+Dense - Memory intensive for large datasets
+
